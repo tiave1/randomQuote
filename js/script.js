@@ -46,14 +46,10 @@ function printQuote () {
 //checks if citation property has a value if not it doesn't append the span
   if (citationElement.innerText !== '') {
     sourceElement.appendChild(citationElement);
-  } else {
-
   }
 //checks if year property has a value if not it doesn't append the span
   if (yearElement.innerText !== '') {
     sourceElement.appendChild(yearElement);
-  }else {
-
   }
   //loads the picture into the div .img-box
   imgBox.style.backgroundImage = 'url(./img/' + randomQuote.img + ')';
