@@ -1,6 +1,6 @@
 Project 1 Quotes
 
-0. "I am the greatest, I said that even before I knew I was." Muhammad Ali 
+0. "I am the greatest, I said that even before I knew I was." Muhammad Ali
 
 1. "The future belongs to those who prepare for it today." Malcolm X
 
@@ -8,5 +8,7 @@ Project 1 Quotes
 
 3. "You don't like something, change it. If you can't change it, change your attitude." Maya Angelou
 
-4. “I’m not in this world to live up to your expectations and you’re not in this world to live up to mine.” Bruce Lee
+4. ï¿½Iï¿½m not in this world to live up to your expectations and youï¿½re not in this world to live up to mine.ï¿½ Bruce Lee
 
+/*//  loads the color associated with quotes
+  document.body.style.backgroundColor= randomQuote.color;*/
