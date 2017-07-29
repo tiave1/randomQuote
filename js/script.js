@@ -21,14 +21,16 @@ function refreshQuote(refreshRate) {
 }
 
 // function that randomizes the quotes by using math.random mulitplied by the length of the array (5) then floored to give us a random quote.
-function getRandomIndex() {
+function getRandomQuote() {
   return Math.floor(Math.random() * quotes.length);
 }
-//function that prints the quote
+
+
+//function that prints the quote.
 function printQuote () {
 
   //prints random quote on click
-  var randomIndex = getRandomIndex();
+  var randomIndex = getRandomQuote();
   //starts the page with a random quote on page load
   var randomQuote = quotes.splice(randomIndex, 1)[0];
   //loads random color function
