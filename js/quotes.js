@@ -46,3 +46,5 @@ var quotes = [
         tag:["The Dragon","Martial Arts"]
   }
 ];
+
+var shownQuotes = [];
