@@ -22,27 +22,27 @@ function refreshQuote(refreshRate) {
 
 // function that randomizes the quotes by using math.random mulitplied by the length of the array (5) then floored to give us a random quote.
 function getRandomQuote() {
-  return Math.floor(Math.random() * quotes.length);
+  var randomIndex =  Math.floor(Math.random() * quotes.length);
+    //starts the page with a random quote on page load
+  return quotes.splice(randomIndex, 1)[0];
+
 }
 
 
-//function that prints the quote.
+//PRINT QUOTE FUNCTION
 function printQuote () {
-
-  //prints random quote on click
-  var randomIndex = getRandomQuote();
-  //starts the page with a random quote on page load
-  var randomQuote = quotes.splice(randomIndex, 1)[0];
+  //getRandomQuote Call
+  var result = getRandomQuote();
   //loads random color function
   var randomColor = getRandomColor();
   //loads the quote text
-  quoteElement.innerText = randomQuote.quote;
+  quoteElement.innerText = result.quote;
   //loads the string value from the array defined in var quotes
-  citationElement.innerText = randomQuote.citation;
+  citationElement.innerText = result.citation;
   //loads the year string from the quotes array
-  yearElement.innerText = randomQuote.year;
+  yearElement.innerText = result.year;
   //loads the source of the quote
-  sourceElement.innerText = randomQuote.source;
+  sourceElement.innerText = result.source;
 
 
 //checks if citation property has a value if not it doesn't append the span
@@ -53,22 +53,25 @@ function printQuote () {
   if (yearElement.innerText !== '') {
     sourceElement.appendChild(yearElement);
   }
-  //loads the picture into the div .img-box
-  imgBox.style.backgroundImage = 'url(./img/' + randomQuote.img + ')';
 
-  //uses pushes quote seen on screen to array shownQuotes
-  shownQuotes.push(randomQuote);
+//COLORS and STYLES
+  //loads the picture into the div .img-box
+  imgBox.style.backgroundImage = 'url(./img/' + result.img + ')';
+
+  //colors the button to match the background color of the quote shown
+  quoteButton.style.backgroundColor = result.color;
   //colors the button to match the background color of the quote shown
   quoteButton.style.backgroundColor = randomColor;
 
   //loads the picture into the div .img-box
-  imgBox.style.backgroundImage = 'url(./img/' + randomQuote.img + ')';
+  imgBox.style.backgroundImage = 'url(./img/' + result.img + ')';
   //loads the color associated with quotes
-  document.body.style.backgroundColor= randomQuote.color;
+  document.body.style.backgroundColor= result.color;
+
+//Array Pushing
   //uses pushes quote seen on screen to array shownQuotes
-  shownQuotes.push(randomQuote);
-  //colors the button to match the background color of the quote shown
-  quoteButton.style.backgroundColor = randomQuote.color;
+  shownQuotes.push(result);
+
 
   //ensures that all quotes are shown before showing them again
   // if quotes array
